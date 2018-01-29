@@ -1,24 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Add Post Form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Blog</title>
 </head>
 <body>
-<form action="insert.php" method="post">
-    <p>
-        <label for="PostTitle">Title</label>
-        <input type="text" name="PostTitle" id="firstName">
-    </p>
-    <p>
-        <label for="PostText"> Post Text</label>
-        <input type="text" name="PostText" id="lastName">
-    </p>
-    <p>
-      <label for="OwnderID"> Owner ID</label>
-        <input type="text" name="OwnerID" value="1" readonly id="emailAddress">
-    </p>
-    <input type="submit" value="Submit">
-</form>
+  <a href="admin/index.php">Add new post</a>
+  <?php include('post.php'); ?>
 </body>
 </html>
