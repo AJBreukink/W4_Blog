@@ -10,13 +10,13 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "SELECT PostID, PostTitle, PostText FROM Posts";
+$sql = "SELECT post_id, post_title, post_content FROM Posts";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "PostId: " . $row["PostID"]. "<h1>" . $row["PostTitle"]. "</h1> <p> " . $row["PostText"]. "</p><br>";
+        echo "post_id: " . $row["post_id"]. "<h1>" . $row["post_title"]. "</h1> <p> " . $row["post_content"]. "</p><br>";
     }
 } else {
     echo "0 results";

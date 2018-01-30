@@ -10,13 +10,13 @@ if ($conn->connect_error) {
 }
 
 // Escape user inputs for security
-$PostTitle = mysqli_real_escape_string($conn, $_REQUEST['PostTitle']);
-$PostText = mysqli_real_escape_string($conn, $_REQUEST['PostText']);
-$OwnerID = mysqli_real_escape_string($conn, $_REQUEST['OwnerId']);
+$post_title = mysqli_real_escape_string($conn, $_REQUEST['post_title']);
+$post_content = mysqli_real_escape_string($conn, $_REQUEST['post_content']);
+$owner_id = mysqli_real_escape_string($conn, $_REQUEST['owner_id']);
 
 
 
-$sql = "INSERT INTO Posts (PostTitle, OwnerID, PostText) VALUES('$PostTitle','$OwnerID','$PostText')";
+$sql = "INSERT INTO Posts (post_title, owner_id, post_content) VALUES('$post_title','$owner_id','$post_content')";
 
 
 if ($conn->query($sql) === TRUE) {
