@@ -10,14 +10,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
   }
 
 
-$sql = "SELECT p.post_id, p.post_title, p.post_content,
-GROUP_CONCAT(c.category_title ORDER BY  c.category_id ASC SEPARATOR ', ') as 'category_list'
-FROM
-Posts p
-JOIN  Posts_Categories pc on p.post_id = pc.post_id
-JOIN Categories c on pc.category_id = c.category_id
-GROUP by p.post_title
-ORDER BY p.post_id ASC";
+$sql = "SELECT p.post_title, p.post_content,p.post_id,
+GROUP_CONCAT(c.category_title  SEPARATOR ', ') as 'category_list'
+FROM Posts p , Posts_Categories pc , Categories c
+WHERE p.post_id = pc.post_id and pc.category_id = c.category_id
+GROUP BY p.post_id
+ORDER BY p.post_id DESC";
 
 
 

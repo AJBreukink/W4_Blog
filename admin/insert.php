@@ -12,8 +12,8 @@ if ($conn->connect_error) {
 $post_title = mysqli_real_escape_string($conn, $_REQUEST['post_title']);
 $post_content = mysqli_real_escape_string($conn, $_REQUEST['post_content']);
 $owner_id = mysqli_real_escape_string($conn, $_REQUEST['owner_id']);
-$category_id = isset(($_REQUEST['categories'])) ? $_REQUEST['categories'] : array();
-
+$category_id = isset(($_REQUEST['categories'])) ? $_REQUEST['categories'] : array("0" => "1");
+var_dump($category_id);
 // values to be submited for the post
 $sql = "INSERT INTO Posts (post_title, owner_id, post_content)
   VALUES('$post_title','$owner_id','$post_content')";
@@ -29,9 +29,9 @@ $sql3 = 'INSERT INTO Posts_Categories (post_id, category_id) VALUES '.implode(',
 
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully <a href='../index.php'>Back to posts</a> ";
+
     if ($conn-> query($sql3) === TRUE) {
-        echo "New record created successfully (category) <a href='../index.php'>Back to posts</a> ";
+        header('Location: ../index.php');
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
