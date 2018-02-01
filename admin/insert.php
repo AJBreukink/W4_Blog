@@ -1,7 +1,6 @@
 <?php
 $configs = include('../include/config.php');
 
-$settings ="Allow User Variables=True";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -13,19 +12,25 @@ if ($conn->connect_error) {
 $post_title = mysqli_real_escape_string($conn, $_REQUEST['post_title']);
 $post_content = mysqli_real_escape_string($conn, $_REQUEST['post_content']);
 $owner_id = mysqli_real_escape_string($conn, $_REQUEST['owner_id']);
-$category_id = mysqli_real_escape_string($conn, $_REQUEST['category_id']);
+$category_id = isset(($_REQUEST['categories'])) ? $_REQUEST['categories'] : array();
 
-
-//$sql = "INSERT INTO Posts (post_title, owner_id, post_content) VALUES('$post_title','$owner_id','$post_content')";
-
+// values to be submited for the post
 $sql = "INSERT INTO Posts (post_title, owner_id, post_content)
   VALUES('$post_title','$owner_id','$post_content')";
-$sql2 ="INSERT INTO PostCategory (post_id, category_id)
-  VALUES( LAST_INSERT_ID(), '$category_id')";
+
+//make an array & loop through checkbox value
+$sql_array = array();
+foreach($category_id as $value) {
+    $sql_array[] = "(LAST_INSERT_ID()," . "'" .$value . "'" .")";
+}
+//category values to submit
+$sql3 = 'INSERT INTO Posts_Categories (post_id, category_id) VALUES '.implode(',', $sql_array);
+
+
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully <a href='../index.php'>Back to posts</a> ";
-    if ($conn->query($sql2) === TRUE) {
+    if ($conn-> query($sql3) === TRUE) {
         echo "New record created successfully (category) <a href='../index.php'>Back to posts</a> ";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

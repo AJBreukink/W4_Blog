@@ -19,12 +19,8 @@
       <label for="owner_id"> Owner ID</label>
         <input type="text" name="owner_id" value="1" readonly >
     </p>
-    <p> <lable> Category </lable><select name="category_id">
-    <option value="1"> mischief </option>
-    <option value="2"> general </option>
-    <option value="3"> food</option>
+    <p> <?php include("categories.php") ?><p>
 
-  </select> <p>
     <input type="submit" value="Submit">
 </form>
 </body>
