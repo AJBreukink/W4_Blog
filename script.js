@@ -1,17 +1,22 @@
 
     // $("button").click(function(){
-    //     $("p").toggle();
+    //
     // });
 
+    $(".dropdown").click(function(){
+      // Holds the product ID of the clicked element
+      var buttonId = $(this).data('target');
+      $(buttonId).toggle();
+      $('#grid').isotope('layout');
+    });
 
 jQuery(function ($) {
 
 $('#grid').isotope({
   // set itemSelector so .grid-sizer is not used in layout
   itemSelector: '.grid-item',
-  percentPosition: true,
   masonry: {
-    columnWidth: 50
+    columnWidth: 100
   }
 })
 // filter items on button click

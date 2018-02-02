@@ -1,15 +1,123 @@
 
 html {
+background-color: #efefef;
+font-family: 'Open Sans', sans-serif;
+color: #474747;
+overflow-y: scroll;
+}
+
+
+body {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right:auto;
+  padding:1em;
+}
+
+h2 {
+  font-family: 'Poiret One', cursive;
+  font-size: 3em;
+  color:black;
+  font-weight: bold;
+  margin-bottom:10px;
+  text-transform: capitalize;
 
 }
-.grid {
-  width: 600px;
+#heading {
+
+  font-size: 5em;
+  color:black;
+  text-align: center;
+vertical-align:2.5em;
+padding:1em;
+display: block;
+
+}
+.content {
+  display: none;
+}
+.meuw {
+  font-family: 'Poiret One', cursive;
+}
+.button-group {
+  width: inherit;
+  display:flex;
+  margin-bottom:1em;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.button-group button {
+  width:auto;
+  text-transform: uppercase;
+  padding: 1em;
+  box-sizing:border-box;
+  -webkit-transform:skew(-1deg);
+  transform:skew(-1deg);
+  border-right: 1px solid red;
+  background-color:rgba(255,255,255,0.01);
+}
+.extract > .dropdown {
+  text-transform: uppercase;
+  width: 100%;
+  padding: 1em;
+  box-sizing:border-box;
+  color:red;
+  border-top: 1px solid red;
+  border-right:none;
+  border-left:none;
+  border-bottom:none;
+  margin-top:2em;
+  background-color:rgba(255,255,255,0.01);
+display: block;
+}
+#grid {
+  width: 100%;
   margin: 0 auto;
 }
 .grid-item {
+  padding: 1.5em;
+  box-sizing:border-box;
   float: left;
-  width: 49%;
+  width: 48%;
   height: auto;
-  background: #e6e5e4;
-  border: 2px solid #b6b5b4;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid black;
+
+    -webkit-transform:skew(-1deg);
+    transform:skew(-1deg);
+}
+@media (max-width: 1200px) {
+  .grid-item {
+    width: 100%;
+  }
+}
+.grid-item > * { transform: skew(1deg); }
+
+.category-footer & .data-footer {
+  font-style: italic;
+  color:#ededed;
+}
+.category-footer {
+  float: right;
+  text-transform: uppercase;
+}
+.data-footer {
+  float: left;
+}
+
+.login-link {
+  width:auto;
+  text-transform: uppercase;
+  padding: 1em;
+  box-sizing:border-box;
+  -webkit-transform:skew(-1deg);
+  transform:skew(-1deg);
+  border-right: 1px solid white;
+  background-color:red;
+  color:white;
+  float:right;
+  text-decoration: none;
+}
+.login-link :hover {
+  background-color: black;
 }

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Add Post Form</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Poiret+One" rel="stylesheet">
 </head>
 <body>
   <a href="../index.php">Back to posts</a>

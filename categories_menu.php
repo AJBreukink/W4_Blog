@@ -1,5 +1,5 @@
 <?php
-$configs = include('../include/config.php');
+$configs = include('include/config.php');
 
 
 // Create connection
@@ -10,8 +10,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         }
 
       $sql = "SELECT  c.category_id, c.category_title, c.category_description
-              FROM Categories c
-              LIMIT 1, 18446744073709551615";
+              FROM Categories c";
 
 
       $result = $conn->query($sql);
@@ -19,13 +18,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
                   // output data of each row
                   while($row = $result->fetch_assoc()) {
-                    ?>
+                    $category_title = $row["category_title"];
+                    $category_description = $row["category_description"];
 
-                      <input type="checkbox"
-                      title="<?php echo $row["category_description"]; ?>"name="categories[]" value="<?php echo $row["category_id"] ?>">
-                      <?php echo $row["category_title"] ?>
-                      <br>
-                      <?php
+
+                    echo "  <button data-filter=\".$category_title\" title=\"$category_description\">$category_title</button>";
+
                   }
               }
 
