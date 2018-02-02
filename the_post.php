@@ -7,8 +7,8 @@ $title = $row["post_title"];
 $extract = $row["extract"];
 $content_min_extract = $row["content"];
 
-echo "<div id=\"main-container\">
-  <div id=\"post-$id\" class=\"article $category_list\">
+echo "
+  <div id=\"post-$id\" class=\"article $category_list grid-item\">
       <div class=\"title\">
       <h2>$title  </h2>
       </div>
@@ -18,10 +18,9 @@ echo "<div id=\"main-container\">
       <div class=\"content\" id=\"dropdown-$id\">
       $content_min_extract
       </div>
-      $category_list $date
+      <span class=\"category-footer\">$category_list </span> <span class=\"date-footer\"> $date </span>
   </div>
-</div>";
+";
 
 
 ?>
-<!DOCTYPE html>
