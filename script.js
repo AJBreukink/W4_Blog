@@ -1,14 +1,14 @@
-
-    // $("button").click(function(){
-    //
-    // });
-
-    $(".dropdown").click(function(){
+$(".dropdown").click(function(){
       // Holds the product ID of the clicked element
       var buttonId = $(this).data('target');
+      var self = $(this).parent();
+
+   self.toggleClass("grid-item-fullwidth");
       $(buttonId).toggle();
+
+
       $('#grid').isotope('layout');
-    });
+});
 
 jQuery(function ($) {
 

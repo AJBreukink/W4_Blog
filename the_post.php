@@ -13,11 +13,12 @@ echo "
       <h2>$title  </h2>
       </div>
       <div class=\"extract\"> $extract
-      <button id=\"toggle-$id\" data-target=\"#dropdown-$id\" class=\"dropdown\"> read more </button>
+
       </div>
       <div class=\"content\" id=\"dropdown-$id\">
       $content_min_extract
       </div>
+      <button id=\"toggle-$id\" data-target=\"#dropdown-$id\" class=\"dropdown\"> read more </button>
       <span class=\"category-footer\">$category_list </span> <span class=\"date-footer\"> $date </span>
   </div>
 ";

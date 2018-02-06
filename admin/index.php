@@ -21,7 +21,7 @@
         <p> <label >Select a category</label> <br>
         <?php include("categories.php") ?><p>
           <p>
-            <textarea type="text" name="post_content" placeholder="Say meauwww..." > </textarea>
+            <textarea id="post-text" type="text" name="post_content" placeholder="Say meauwww..." > </textarea>
           </p>
           <!-- hidden field to catch author id -->
           <input type="text" name="owner_id" value="1" readonly hidden >
@@ -29,5 +29,8 @@
           <input class="link-button" type="submit" value="Submit">
         </form>
       </div>
+      <script src="script.js">
+
+      </script>
 </body>
 </html>
