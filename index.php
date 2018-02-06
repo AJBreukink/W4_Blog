@@ -17,12 +17,12 @@
   <a class="login-link" href="admin/index.php">Add new post</a>
   <div class="button-group filter-button-group">
     <button data-filter="*">show all</button>
-    <?php include('categories_menu.php'); ?>
+    <?php include('categories_bar.php'); ?>
   </div>
   <div id="grid">
     <?php include('get_posts.php'); ?>
   </div>
-  <script src="script.js">
+  <script src="scripts/script.js">
 
   </script>
 </body>

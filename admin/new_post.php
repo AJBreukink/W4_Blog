@@ -1,5 +1,5 @@
 <div class="form-placeholder">
-  
+
   <h1> What inspires you today? </h1>
 
     <form action="insert.php" method="post">
@@ -8,7 +8,7 @@
       <input type="text" name="post_title" >
       </p>
       <p> <label >Select a category</label> <br>
-      <?php include("categories.php") ?><p>
+      <?php include("categories_checkbox.php") ?><p>
         <p>
           <textarea id="post-text" type="text" name="post_content" placeholder="Say meauwww..." > </textarea>
         </p>
@@ -20,4 +20,4 @@
         <input class="link-button" type="submit" value="Submit">
 
       </form>
-    </div>
+  </div>

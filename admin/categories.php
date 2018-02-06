@@ -18,20 +18,34 @@ $conn = new mysqli($servername, $username, $password, $dbname);
               if ($result->num_rows > 0) {
 
                   // output data of each row
-                  while($row = $result->fetch_assoc()) {
-                    ?>
+                  ?>
+                   <table>
+                     <tr>
+                       <th>Category</th>
+                       <th>Description</th>
+                   </tr>
+                   <?php
+                    while($row = $result->fetch_assoc()) {
+                      ?>
+                      <tr>
+                        <th>
+                        <?php echo $row["category_title"] ?>
+                       </th>
+                       <th>
+                        <?php echo $row["category_description"]; ?>
+                        </th>
+                      </tr>
 
-                      <input type="checkbox"
-                      title="<?php echo $row["category_description"]; ?>"name="categories[]" value="<?php echo $row["category_id"] ?>">
-                      <?php echo $row["category_title"] ?>
-                      <br>
-                      <?php
+
+                    <?php } ?>
+
+                  </table>
+                  <?php
                   }
-              }
 
-              else {
-                  echo "no categories";
-              }
+                  else {
+                      echo "no categories";
+                  }
 
 $conn->close();
 ?>

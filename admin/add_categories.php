@@ -14,4 +14,5 @@
         <input class="link-button" type="submit" value="Submit">
 
       </form>
+      <?php include("categories.php") ?>
     </div>
