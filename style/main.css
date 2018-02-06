@@ -190,3 +190,6 @@ ul.tabs{
 		.tab-content.current{
 			display: inherit;
 		}
+    [id^=dropdown]:target{
+      display:block;
+    }

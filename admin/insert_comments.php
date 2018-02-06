@@ -27,9 +27,11 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         if ($conn->query($sql) === TRUE) {
           echo "<script>
-          alert('message sent succesfully $article_id');
-          window.history.go(-1);
+          alert('message sent succesfully');
+
+
           </script>";
+          header("Location: ../index.php#dropdown-$article_id");
 
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;

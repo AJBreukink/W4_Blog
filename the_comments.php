@@ -1,25 +1,21 @@
 <?php
-$id = $row["post_id"];
-$date = date("m/d/Y", strtotime($row["post_date"]));
-$category_list = $row["category_list"];
-$post_content = $row["post_content"];
-$title = $row["post_title"];
-$extract = $row["extract"];
-$content_min_extract = $row["content"];
+$comment_id = $row["comment_id"];
+$comment_date = date("m/d/Y", strtotime($row["comment_date"]));
+$comment_text = $row["comment_text"];
+$comment_user = $row["comment_user"];
+
 
 echo "
-  <div id=\"post-$id\" class=\"article $category_list grid-item\">
-      <div class=\"title\">
-      <h2>$title  </h2>
-      </div>
-      <div class=\"extract\"> $extract
+  <div id=\"comment-$comment_id\" class=\" comment_box\">
+
+      <div class=\"username\"> $comment_user
 
       </div>
-      <div class=\"content\" id=\"dropdown-$id\">
-      $content_min_extract
+      <div class=\"comment_text\" >
+      $comment_text
       </div>
-      <button id=\"toggle-$id\" data-target=\"#dropdown-$id\" class=\"dropdown\"> read more </button>
-      <span class=\"category-footer\">$category_list </span> <span class=\"date-footer\"> $date </span>
+
+       <span class=\"date-footer\"> $comment_date </span>
   </div>
 ";
 

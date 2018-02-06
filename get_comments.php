@@ -1,6 +1,4 @@
 <?php
-$configs = include('include/config.php');
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -10,26 +8,23 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         }
 
 
-      $sql = "SELECT p.post_title, p.post_content,p.post_id,p.post_date,
-              SUBSTRING(post_content,1,100) as 'extract', SUBSTRING(post_content,100) as 'content',
-              GROUP_CONCAT(c.category_title  SEPARATOR ', ') as 'category_list'
-              FROM Posts p , Posts_Categories pc , Categories c
-              WHERE p.post_id = pc.post_id and pc.category_id = c.category_id
-              GROUP BY p.post_id
-              ORDER BY p.post_id DESC";
+      $sql5 = "SELECT c.comment_user, c.comment_text, c.comment_date, c.comment_id, c.article_id
+              FROM Comments c
+              WHERE c.article_id = '$id'";
 
 
-      $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
+      $result2 = $conn->query($sql5);
+            if ($result2->num_rows > 0) {
               // output data of each row
-              while($row = $result->fetch_assoc()) {
+              while($row = $result2->fetch_assoc()) {
               // get output tempalate
-              include('the_post.php');
+              include('the_comments.php');
               }
             }
             else {
               echo "0 results";
             }
 
-$conn->close();
-?>
+
+            $conn->close();
+            ?>
