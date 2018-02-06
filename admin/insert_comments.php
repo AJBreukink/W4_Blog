@@ -9,14 +9,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         }
 
         // Escape user inputs for security
-        $shortcut_name = mysqli_real_escape_string($conn, $_REQUEST['shortcut_name']);
-        $shortcut_value = mysqli_real_escape_string($conn, $_REQUEST['shortcut_value']);
+        $comment_user = mysqli_real_escape_string($conn, $_REQUEST['comment_user']);
+        $comment_text = mysqli_real_escape_string($conn, $_REQUEST['comment_text']);
+        $article_id = mysqli_real_escape_string($conn, $_REQUEST['article_id']);
 
 
 
         // values to be submited for the post
-        $sql = "INSERT INTO Shortcuts (shortcut_name, shortcut_value)
-                VALUES('$shortcut_name','$shortcut_value')";
+        $sql = "INSERT INTO Comments (comment_user, comment_text, article_id)
+                VALUES('$comment_user','$comment_text', '$article_id')";
 
         //make an array & loop through checkbox value
 
@@ -25,7 +26,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
         if ($conn->query($sql) === TRUE) {
-header('Location: ../index.php');
+          echo "<script>
+          alert('message sent succesfully $article_id');
+          window.history.go(-1);
+          </script>";
 
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;

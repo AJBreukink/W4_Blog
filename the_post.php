@@ -6,7 +6,7 @@ $post_content = $row["post_content"];
 $title = $row["post_title"];
 $extract = $row["extract"];
 $content_min_extract = $row["content"];
-
+$comments = 'post_comments.php';
 echo "
   <div id=\"post-$id\" class=\"article $category_list grid-item\">
       <div class=\"title\">
@@ -16,12 +16,15 @@ echo "
 
       </div>
       <div class=\"content\" id=\"dropdown-$id\">
-      $content_min_extract
+      $content_min_extract";
+      include($comments);
+echo  "
       </div>
       <button id=\"toggle-$id\" data-target=\"#dropdown-$id\" class=\"dropdown\"> read more </button>
       <span class=\"category-footer\">$category_list </span> <span class=\"date-footer\"> $date </span>
-  </div>
-";
+
+  </div>"
+;
 
 
 ?>

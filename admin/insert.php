@@ -34,6 +34,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
             if ($conn-> query($sql3) === TRUE) {
                 header('Location: ../index.php');
+
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
