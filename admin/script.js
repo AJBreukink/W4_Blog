@@ -1,14 +1,21 @@
 
 
-  //Expand keywords
- shortcuts = {
-    "cci": "customer called in",
-    "rfc": "request for comments",
-    "www": "world wide web"
+  //get expand keywords from hidden object on page
+var shortcuts = $("#keywords").data('keywords');
 
 
-}
 jQuery(function ($) {
+
+      //tabs for admin menu
+      $('ul.tabs li').click(function(){
+    		var tab_id = $(this).attr('data-tab');
+
+    		$('ul.tabs li').removeClass('current');
+    		$('.tab-content').removeClass('current');
+
+    		$(this).addClass('current');
+    		$("#"+tab_id).addClass('current');
+    	})
       //function to expand keywords
       //first check if textbox present
       if ( $("#post-text").length ) {

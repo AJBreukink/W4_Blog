@@ -9,26 +9,34 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-  <div class="form-placeholder">
-    <div style="height:3em"> <a class="login-link" href="../index.php">Back to posts</a> </div>
-    <h1> What inspires you today? </h1>
+  <div style="height:3em"> <a class="login-link" href="../index.php">Back to posts</a> </div>
+      <div class="container">
 
-      <form action="insert.php" method="post">
-        <p>
-        <label for="PostTitle">Title</label>
-        <input type="text" name="post_title" >
-        </p>
-        <p> <label >Select a category</label> <br>
-        <?php include("categories.php") ?><p>
-          <p>
-            <textarea id="post-text" type="text" name="post_content" placeholder="Say meauwww..." > </textarea>
-          </p>
-          <!-- hidden field to catch author id -->
-          <input type="text" name="owner_id" value="1" readonly hidden >
+        	<ul class="tabs">
+        		<li class="tab-link current" data-tab="tab-1">New Post</li>
+        		<li class="tab-link" data-tab="tab-2">Add Categories</li>
+        		<li class="tab-link" data-tab="tab-3">Comments</li>
+        		<li class="tab-link" data-tab="tab-4">Shortcuts Dictionary</li>
+        	</ul>
 
-          <input class="link-button" type="submit" value="Submit">
-        </form>
-      </div>
+        	<div id="tab-1" class="tab-content current">
+            <?php include('new_post.php'); ?>
+          </div>
+
+        	<div id="tab-2" class="tab-content">
+        	  <?php include('add_categories.php'); ?>
+        	</div>
+
+        	<div id="tab-3" class="tab-content">
+            <?php include('edit_comments.php'); ?>
+          </div>
+
+        	<div id="tab-4" class="tab-content">
+        		<?php include('add_shortcuts.php'); ?>
+        	</div>
+
+    </div>
+
       <script src="script.js">
 
       </script>
