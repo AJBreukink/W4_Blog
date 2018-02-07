@@ -11,23 +11,26 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
       $sql_comments = "SELECT p.post_title, c.comment_user, c.comment_text,
-       c.comment_id, c.deleted, c.comment_date
-              FROM Comments c, Posts p
-              WHERE c.article_id = p.post_id
-              ORDER BY p.post_id";
+                        c.comment_id, c.comment_date,
+                          CASE c.deleted
+                            WHEN '1'
+                            THEN 'DELETED' END AS status
+                          FROM Comments c, Posts p
+                      WHERE c.article_id = p.post_id
+                      ORDER BY p.post_id";
 
 
       $result = $conn->query($sql_comments);
             if ($result->num_rows > 0) {
               // output data of each row
               ?>
-              <table>
+              <table id="comments_status">
                 <tr>
                   <th>Article Title</th>
                   <th>Username</th>
                   <th>Comment</th>
                   <th>Date</th>
-                  <th>Status</th>
+
                   <th>Delete</th>
                 </tr>
                <?php

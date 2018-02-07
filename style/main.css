@@ -198,4 +198,13 @@ ul.tabs{
     [id^=post]:target > [id^=dropdown]{
       display:block;
 
+
     }
+#comments_status > tbody > tr.DELETED {
+  color: #d6d6d6;
+  text-decoration: line-through;
+
+}
+#comments_status > tbody > tr.DELETED > th > button {
+  display: none;
+}
