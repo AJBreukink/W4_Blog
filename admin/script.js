@@ -3,6 +3,7 @@
   //get expand keywords from hidden object on page
 var shortcuts = $("#keywords").data('keywords');
 
+console.log(shortcuts);
 
 jQuery(function ($) {
 
@@ -24,7 +25,7 @@ jQuery(function ($) {
             var timer = 0;
             // expand string
             var expand = new RegExp("\\b(" + Object.keys(shortcuts).join("|") + ")\\b", "g");
-
+console.log(shortcuts["www".toLowerCase()]);
             //updates text input
             update = function () {
                   post.value = post.value.replace(expand, function ($0, $1) {
