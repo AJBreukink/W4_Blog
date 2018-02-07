@@ -26,9 +26,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                       while($row = $result->fetch_assoc()) {
                         $shortcut_name = $row["shortcut_name"];
                         $shortcut_value = $row["shortcut_value"];
-                      // echo "\"$shortcut_name\": \"$shortcut_value\", ";
-                       // Remove # here, just store values
-
                        $array[$shortcut_name] = $shortcut_value;
                      }
 
@@ -40,5 +37,5 @@ $conn = new mysqli($servername, $username, $password, $dbname);
               else {
                   echo "no shortcuts";
               }
-              $conn->close();
+$conn->close();
               ?>
