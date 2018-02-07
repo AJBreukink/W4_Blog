@@ -31,7 +31,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
           </script>";
-          header("Location: ../index.php#dropdown-$article_id");
+          header("Location: ../index.php#post-$article_id");
 
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;

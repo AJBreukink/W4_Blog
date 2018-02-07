@@ -190,6 +190,12 @@ ul.tabs{
 		.tab-content.current{
 			display: inherit;
 		}
-    [id^=dropdown]:target{
+    [id^=post]:target{
+
+      /* width: 100%; */
+
+    }
+    [id^=post]:target > [id^=dropdown]{
       display:block;
+
     }
