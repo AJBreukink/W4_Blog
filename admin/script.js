@@ -2,27 +2,31 @@
 
 $('#comments_status').on('click', '.delete_button_comment', function() {
   var id = $(this).data('id');
-  updateDatabase(id, "delete_comments.php", "#comments_status", "get_comments" );
+  updateDatabase(id, "delete_comments.php", "#comments_status", "get_comments.php" );
 } );
 
 $('#article_status').on('click', '.delete_button_posts', function() {
   var id = $(this).data('id');
-  updateDatabase(id, "delete_post.php", "#article_status", "get_posts_admin" );
+  updateDatabase(id, "delete_post.php", "#article_status", "get_posts_admin.php" );
+} );
+$('#article_status').on('click', '.restor_button_posts', function() {
+  var id = $(this).data('id');
+  updateDatabase(id, "restor_post.php", "#article_status", "get_posts_admin.php" );
 } );
 
 $('#article_status').on('click', '.off_button_posts', function() {
   var id = $(this).data('id');
-  updateDatabase(id, "stop_comments.php", "#article_status", "get_posts_admin" );
+  updateDatabase(id, "stop_comments.php", "#article_status", "get_posts_admin.php" );
 } );
 
 $('#article_status').on('click', '.pause_button_posts', function() {
   var id = $(this).data('id');
-  updateDatabase(id, "pause_comments.php", "#article_status", "get_posts_admin" );
+  updateDatabase(id, "pause_comments.php", "#article_status", "get_posts_admin.php" );
 } );
 
 $('#article_status').on('click', '.on_button_posts', function() {
   var id = $(this).data('id');
-  updateDatabase(id, "on_comments.php", "#article_status", "get_posts_admin" );
+  updateDatabase(id, "on_comments.php", "#article_status", "get_posts_admin.php" );
 } );
 
 //ajax xonstructor to update enteries
@@ -41,9 +45,8 @@ function updateDatabase(id, path, selector, content){
 
 //on ajax refresh updated enteries
 function reloadPagePart(selector, content) {
-     var filepath = content + ".php";
 
-       $(selector).fadeOut('slow').load(filepath).fadeIn("fast");
+       $(selector).fadeOut('slow').load(content).fadeIn("fast");
 
    };
 

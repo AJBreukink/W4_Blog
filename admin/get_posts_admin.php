@@ -10,10 +10,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         }
 
 
-      $sql_posts = "SELECT p.post_id, p.post_title, p.post_date, p.comments,
+      $sql_posts = "SELECT p.post_id,p.post_deleted, p.post_title, p.post_date, p.comments,
                             CASE p.post_deleted
                               WHEN '1'
-                              THEN 'Deleted'
+                              THEN 'DELETED'
                               WHEN '0'
                               THEN 'Posted'
                             END AS status,
@@ -37,10 +37,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <tr>
                   <th>Article Title</th>
                   <th>Date</th>
-                  <th>Status</th>
-                  <th>Delete</th>
-                  <th>Comments</th>
-                  <th colspan="2">Edit</th>
+
+                  <th>Delete/Restor</th>
+        
+                  <th colspan="2">Comments</th>
 
                 </tr>
                <?php
