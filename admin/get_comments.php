@@ -17,7 +17,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                             THEN 'DELETED' END AS status
                           FROM Comments c, Posts p
                       WHERE c.article_id = p.post_id
-                      ORDER BY p.post_id";
+                      ORDER BY p.post_id DESC";
 
 
       $result = $conn->query($sql_comments);

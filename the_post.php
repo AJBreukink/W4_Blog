@@ -8,6 +8,7 @@ $extract = $row["extract"];
 $content_min_extract = $row["content"];
 $comments_form = 'add_comment.php';
 $comments_list = 'get_comments.php';
+$comment_status = $row["comments"];
 
 echo "
   <div id=\"post-$id\" class=\"article $category_list grid-item\">
@@ -19,8 +20,26 @@ echo "
       </div>
       <div class=\"content\" id=\"dropdown-$id\">
       $content_min_extract";
-      include($comments_form);
-      include($comments_list);
+      
+      if ($comment_status == 0) {
+        include($comments_form);
+        include($comments_list);
+      }
+      //if comments turned off
+      elseif ($comment_status == 1) {
+          echo "<h5>comments are dissabled for this article</h5>";
+      }
+      //if comments paused
+      elseif ($comment_status == 2) {
+        echo "<h5> New comments are dissabled for this article</h5>";
+        include($comments_list);
+      }
+
+      //if no data show all 3 buttons
+       else {
+          echo "something went wrong, try reloading the page to see comments";
+      }
+
 echo  "
       </div>
       <button id=\"toggle-$id\" data-target=\"#dropdown-$id\" class=\"dropdown\"> read more </button>

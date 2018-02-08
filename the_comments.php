@@ -5,6 +5,7 @@ $comment_text = $row["comment_text"];
 $comment_user = $row["comment_user"];
 
 
+
 echo "
   <div id=\"comment-$comment_id\" class=\" comment_box\">
 

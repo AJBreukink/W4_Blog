@@ -26,6 +26,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 	                            THEN 'paused'
                           END AS comments_named
                           FROM Posts p
+                          ORDER BY p.post_id DESC
                       ";
 
 
@@ -39,7 +40,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                   <th>Date</th>
 
                   <th>Delete/Restor</th>
-        
+
                   <th colspan="2">Comments</th>
 
                 </tr>
