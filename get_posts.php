@@ -11,15 +11,18 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
       $sql = "SELECT p.post_title, p.post_content,p.post_id,p.post_date,p.comments,
-              SUBSTRING(post_content,1,100) as 'extract',
-              SUBSTRING(post_content,100) as 'content',
-              GROUP_CONCAT(c.category_title  SEPARATOR ', ') as 'category_list'
-              FROM Posts p , Posts_Categories pc , Categories c
-              WHERE p.post_deleted = 0 
+              COUNT( cm.article_id ) AS 'comment_count',
+              SUBSTRING(p.post_content,1,100) as 'extract',
+              SUBSTRING(p.post_content,100) as 'content',
+              GROUP_CONCAT(DISTINCT c.category_title  SEPARATOR ', ') as 'category_list'
+              FROM  Posts_Categories pc , Categories c, Posts p
+              LEFT JOIN Comments cm ON p.post_id = cm.article_id
+              WHERE p.post_deleted = 0
                 and p.post_id = pc.post_id
                 and pc.category_id = c.category_id
               GROUP BY p.post_id
               ORDER BY p.post_id DESC";
+            
 
 
       $result = $conn->query($sql);

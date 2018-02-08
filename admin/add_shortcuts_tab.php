@@ -1,6 +1,8 @@
+
+<h2> Add a new shortcut</h2> <hr> <br>
 <div class="form-placeholder">
 
-  <h1> Add a new shortcut</h1>
+
 
     <form id="shortcuts_form"  method="post">
       <p>

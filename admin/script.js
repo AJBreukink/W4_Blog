@@ -1,6 +1,6 @@
 
 
-//BUTTONS for ajax call to toggle comment/article status 
+//BUTTONS for ajax call to toggle comment/article status
 
 $('#comments_status').on('click', '.delete_button_comment', function() {
   var id = $(this).data('id');
@@ -71,21 +71,21 @@ function refreshShortcuts (){
 
 //ajax constructor to update enteries
 function updateDatabase(id, path, selector, content){
-       $.ajax({
-            type: "POST",
-            url: path,
-            data: {data: id}
-       }).done(function( msg ) {
+                   $.ajax({
+                        type: "POST",
+                        url: path,
+                        data: {data: id}
+                   }).done(function( msg ) {
 
-            reloadPagePart(selector,content);
+                        reloadPagePart(selector,content);
 
-       });
+                   });
     };
 
 //on ajax refresh updated enteries
 function reloadPagePart(selector, content) {
 
-       $(selector).fadeOut('slow').load(content).fadeIn("fast");
+       $(selector).fadeOut('fast').load(content).fadeIn("fast");
 
    };
 
@@ -121,7 +121,7 @@ function expandShortcuts() {
               }
             };
 
-          };
+};
 
 jQuery(function ($) {
       expandShortcuts();

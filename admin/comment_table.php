@@ -15,11 +15,11 @@ echo  "<tr class='$comment_status'>
           <th>$comment_date</th>";
 
           if ($comment_deleted == 0) {
-            echo  "<th><button class='delete_button_comment' data-id='$comment_id'> delete </button></th>
+            echo  "<th><button class='delete_button_comment toggle' data-id='$comment_id'> delete </button></th>
                   </tr>";
           }
           elseif ($comment_deleted == 1) {
-            echo  "<th><button class='restore_button_comment' data-id='$comment_id'> restore </button></th>
+            echo  "<th><button class='restore_button_comment toggle' data-id='$comment_id'> restore </button></th>
                   </tr>";
           }
 

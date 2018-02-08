@@ -4,11 +4,11 @@
 
     <form action="admin/insert_comments.php" method="post">
       <p>
-      <label for="username">Name</label>
-      <input type="text" name="comment_user" >
+
+      <input type="text" name="comment_user" placeholder="name">
       </p>
 
-          <textarea  type="text" name="comment_text"  > </textarea>
+          <textarea  type="text" name="comment_text" placeholder="comment" > </textarea>
         </p>
         <!-- hidden field to catch post id -->
         <input type="text" name="article_id" value="<?php echo $id; ?>" readonly hidden >

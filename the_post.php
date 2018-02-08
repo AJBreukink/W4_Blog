@@ -9,6 +9,7 @@ $content_min_extract = $row["content"];
 $comments_form = 'add_comment.php';
 $comments_list = 'get_comments.php';
 $comment_status = $row["comments"];
+$comment_count = $row["comment_count"];
 
 echo "
   <div id=\"post-$id\" class=\"article $category_list grid-item\">
@@ -20,7 +21,7 @@ echo "
       </div>
       <div class=\"content\" id=\"dropdown-$id\">
       $content_min_extract";
-      
+
       if ($comment_status == 0) {
         include($comments_form);
         include($comments_list);
@@ -42,11 +43,27 @@ echo "
 
 echo  "
       </div>
-      <button id=\"toggle-$id\" data-target=\"#dropdown-$id\" class=\"dropdown\"> read more </button>
-      <span class=\"category-footer\">$category_list </span> <span class=\"date-footer\"> $date </span>
+      <button id=\"toggle-$id\" data-target=\"#dropdown-$id\" class=\"dropdown\"> read more </button>";
 
-  </div>"
-;
+      if ($comment_status == 0) {
+        echo "<span class=\"speech-bubble category-footer\"> $comment_count </span>";
+      }
+      //if comments turned off
+      elseif ($comment_status == 1) {
+
+      }
+      //if comments paused
+      elseif ($comment_status == 2) {
+        echo "<span class=\"speech-bubble category-footer dissabled\"> $comment_count </span>";
+
+      }
+
+      //if no data show all 3 buttons
+       else {
+
+      }
+
+echo " <span class=\"category-footer\">$category_list </span>  <span class=\"date-footer\"> $date </span>   </div>";
 
 
 ?>

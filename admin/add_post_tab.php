@@ -1,8 +1,8 @@
 <!-- the form for submiting new posts -->
-
+<h2> What inspires you today? </h2> <hr> <br>
 <div class="form-placeholder">
 
-  <h1> What inspires you today? </h1>
+
 
     <form action="insert_post.php" method="post">
 
