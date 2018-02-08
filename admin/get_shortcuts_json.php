@@ -15,9 +15,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
       $result = $conn->query($sql);
+
               if ($result->num_rows > 0) {
 
 
+
+                echo " <input id='keywords' type='text' name='keywords' data-keywords='";
 
 
 
@@ -30,12 +33,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                      }
 
                      echo json_encode( $array );
-
+                     echo "' readonly hidden > ";
 
               }
 
               else {
                   echo "no shortcuts";
               }
+
 $conn->close();
               ?>

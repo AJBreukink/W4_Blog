@@ -17,7 +17,9 @@
         <!-- hidden field to catch author id -->
         <input type="text" name="owner_id" value="1" readonly hidden >
           <!-- hidden field to get shortcuts -->
-        <input id="keywords" type="text" name='keywords' data-keywords='<?php include("get_shortcuts_json.php")?>' readonly hidden >
+          <div id='keywords_wrap'>
+        <?php include("get_shortcuts_json.php")?>
+      </div>
         <input class="link-button" type="submit" value="Submit">
 
       </form>

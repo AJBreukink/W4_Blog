@@ -205,6 +205,3 @@ table > tbody > tr.DELETED {
   text-decoration: line-through;
 
 }
-#comments_status > tbody > tr.DELETED > th > button {
-  display: none;
-}

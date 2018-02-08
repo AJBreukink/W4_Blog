@@ -21,11 +21,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         //make an array & loop through checkbox value
 
 
-
-
-
         if ($conn->query($sql) === TRUE) {
-header('Location: ../index.php');
+
 
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;

@@ -2,20 +2,22 @@
 
   <h1> Add a new shortcut</h1>
 
-    <form action="insert_shortcuts.php" method="post">
+    <form id="shortcuts_form"  method="post">
       <p>
       <label for="Shortcut">Shortcut</label>
-      <input type="text" name="shortcut_name" >
+      <input id="shortcut_name" type="text" name="shortcut_name" >
       </p>
       <p>
       <label for="Shortcut">Expansion</label>
-      <input type="text" name="shortcut_value" >
+      <input id="shortcut_value" type="text" name="shortcut_value" >
       </p>
 
 
 
-        <input class="link-button" type="submit" value="Submit">
+        <input id="add_shortcuts" class="link-button" type="submit" value="Submit">
 
       </form>
-      <?php include("get_shortcuts.php") ?>
+    <div id='keywords_table_wrap'>
+      <?php include("get_shortcuts.php") ?> </div>
+
     </div>

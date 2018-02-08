@@ -11,7 +11,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
       $sql_comments = "SELECT p.post_title, c.comment_user, c.comment_text,
-                        c.comment_id, c.comment_date,
+                        c.comment_id, c.comment_date,c.deleted,
                           CASE c.deleted
                             WHEN '1'
                             THEN 'DELETED' END AS status

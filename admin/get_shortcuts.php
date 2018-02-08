@@ -19,7 +19,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
                   // output data of each row & make a table
                   ?>
-                  <table>
+                  <table id="shortcuts_table">
                      <tr>
                        <th>Shortcuts</th>
                        <th>Description</th>
