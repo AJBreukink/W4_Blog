@@ -5,6 +5,25 @@ $('#comments_status').on('click', '.delete_button_comment', function() {
   updateDatabase(id, "delete_comments.php", "#comments_status", "get_comments" );
 } );
 
+$('#article_status').on('click', '.delete_button_posts', function() {
+  var id = $(this).data('id');
+  updateDatabase(id, "delete_post.php", "#article_status", "get_posts_admin" );
+} );
+
+$('#article_status').on('click', '.off_button_posts', function() {
+  var id = $(this).data('id');
+  updateDatabase(id, "stop_comments.php", "#article_status", "get_posts_admin" );
+} );
+
+$('#article_status').on('click', '.pause_button_posts', function() {
+  var id = $(this).data('id');
+  updateDatabase(id, "pause_comments.php", "#article_status", "get_posts_admin" );
+} );
+
+$('#article_status').on('click', '.on_button_posts', function() {
+  var id = $(this).data('id');
+  updateDatabase(id, "on_comments.php", "#article_status", "get_posts_admin" );
+} );
 
 //ajax xonstructor to update enteries
 function updateDatabase(id, path, selector, content){
@@ -14,7 +33,7 @@ function updateDatabase(id, path, selector, content){
             data: {data: id}
        }).done(function( msg ) {
 
-            alert( msg);
+
             reloadPagePart(selector,content);
 
        });
@@ -24,7 +43,7 @@ function updateDatabase(id, path, selector, content){
 function reloadPagePart(selector, content) {
      var filepath = content + ".php";
 
-       $(selector).fadeOut('slow').load(filepath).fadeIn("slow");
+       $(selector).fadeOut('slow').load(filepath).fadeIn("fast");
 
    };
 

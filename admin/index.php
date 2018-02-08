@@ -14,24 +14,27 @@
 
         	<ul class="tabs">
         		<li class="tab-link current" data-tab="tab-1">New Post</li>
-        		<li class="tab-link" data-tab="tab-2">Add Categories</li>
-        		<li class="tab-link" data-tab="tab-3">Comments</li>
-        		<li class="tab-link" data-tab="tab-4">Shortcuts Dictionary</li>
+            <li class="tab-link" data-tab="tab-2">Edit Posts</li>
+        		<li class="tab-link" data-tab="tab-3">Add Categories</li>
+        		<li class="tab-link" data-tab="tab-4">Edit Comments</li>
+        		<li class="tab-link" data-tab="tab-5">Shortcuts Dictionary</li>
         	</ul>
 
         	<div id="tab-1" class="tab-content current">
             <?php include('add_post_tab.php'); ?>
           </div>
-
-        	<div id="tab-2" class="tab-content">
+          <div id="tab-2" class="tab-content">
+            <?php include('edit_posts_tab.php'); ?>
+          </div>
+        	<div id="tab-3" class="tab-content">
         	  <?php include('add_categories_tab.php'); ?>
         	</div>
 
-        	<div id="tab-3" class="tab-content">
+        	<div id="tab-4" class="tab-content">
             <?php include('edit_comments_tab.php'); ?>
           </div>
 
-        	<div id="tab-4" class="tab-content">
+        	<div id="tab-5" class="tab-content">
         		<?php include('add_shortcuts_tab.php'); ?>
         	</div>
 
