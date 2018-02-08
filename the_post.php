@@ -6,7 +6,7 @@ $post_content = $row["post_content"];
 $title = $row["post_title"];
 $extract = $row["extract"];
 $content_min_extract = $row["content"];
-$comments_form = 'post_comments.php';
+$comments_form = 'add_comment.php';
 $comments_list = 'get_comments.php';
 
 echo "

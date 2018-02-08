@@ -9,29 +9,21 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         }
 
         // Escape user inputs for security
-        // $comment_deleted = mysqli_real_escape_string($conn, $_REQUEST['comment_deleted']);
-        $comment_id = mysqli_real_escape_string($conn, $_REQUEST['comment_id']);
+        $comment_id = mysqli_real_escape_string($conn, $_REQUEST['data']);
 
 
-
-
-        // values to be submited for the post
+        // values to be submited for the delete action
         $sql = "UPDATE Comments
                 SET deleted = 1
                 WHERE comment_id = $comment_id";
 
-        //make an array & loop through checkbox value
-
-
-
-
 
         if ($conn->query($sql) === TRUE) {
-        
+
 
 
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: " . $sql . "<br>" . $comment_id . $conn->error;
         }
 
 $conn->close();

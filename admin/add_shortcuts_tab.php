@@ -17,5 +17,5 @@
         <input class="link-button" type="submit" value="Submit">
 
       </form>
-      <?php include("shortcuts.php") ?>
+      <?php include("get_shortcuts.php") ?>
     </div>

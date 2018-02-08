@@ -1,49 +1,20 @@
 <?php
-$configs = include('../include/config.php');
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-      // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
+$comment_id = $row["comment_id"];
+$comment_date = date("m/d/Y", strtotime($row["comment_date"]));
+$comment_text = $row["comment_text"];
+$comment_user = $row["comment_user"];
+$comment_deleted = $row["status"];
+$post_title = $row["post_title"];
 
 
-      $sql_comments = "SELECT p.post_title, c.comment_user, c.comment_text,
-                        c.comment_id, c.comment_date,
-                          CASE c.deleted
-                            WHEN '1'
-                            THEN 'DELETED' END AS status
-                          FROM Comments c, Posts p
-                      WHERE c.article_id = p.post_id
-                      ORDER BY p.post_id";
+echo  "<tr class='$comment_deleted'>
+          <th>$post_title </th>
+          <th>$comment_user</th>
+          <th>$comment_text</th>
+          <th>$comment_date</th>
+          
+          <th><button class='delete_button_comment' data-id='$comment_id'> delete </button></th>
+        </tr>";
 
 
-      $result = $conn->query($sql_comments);
-            if ($result->num_rows > 0) {
-              // output data of each row
-              ?>
-              <table id="comments_status">
-                <tr>
-                  <th>Article Title</th>
-                  <th>Username</th>
-                  <th>Comment</th>
-                  <th>Date</th>
-
-                  <th>Delete</th>
-                </tr>
-               <?php
-              while($row = $result->fetch_assoc()) {
-              // get output tempalate
-              include('comment_row.php');
-              }
-              ?> </table> <?php
-            }
-
-            else {
-              echo "0 results";
-            }
-
-$conn->close();
 ?>

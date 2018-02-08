@@ -20,19 +20,19 @@
         	</ul>
 
         	<div id="tab-1" class="tab-content current">
-            <?php include('new_post.php'); ?>
+            <?php include('add_post_tab.php'); ?>
           </div>
 
         	<div id="tab-2" class="tab-content">
-        	  <?php include('add_categories.php'); ?>
+        	  <?php include('add_categories_tab.php'); ?>
         	</div>
 
         	<div id="tab-3" class="tab-content">
-            <?php include('edit_comments.php'); ?>
+            <?php include('edit_comments_tab.php'); ?>
           </div>
 
         	<div id="tab-4" class="tab-content">
-        		<?php include('add_shortcuts.php'); ?>
+        		<?php include('add_shortcuts_tab.php'); ?>
         	</div>
 
     </div>

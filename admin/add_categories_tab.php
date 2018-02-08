@@ -14,5 +14,6 @@
         <input class="link-button" type="submit" value="Submit">
 
       </form>
-      <?php include("categories.php") ?>
+
+      <?php include("get_categories.php") //get the list of existing categories?>
     </div>

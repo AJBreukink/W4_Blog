@@ -1,20 +1,37 @@
 
 
-  //get expand keywords from hidden object on page
+$('#comments_status').on('click', '.delete_button_comment', function() {
+  var id = $(this).data('id');
+  updateDatabase(id, "delete_comments.php", "#comments_status", "get_comments" );
+} );
+
+
+//ajax xonstructor to update enteries
+function updateDatabase(id, path, selector, content){
+       $.ajax({
+            type: "POST",
+            url: path,
+            data: {data: id}
+       }).done(function( msg ) {
+
+            alert( msg);
+            reloadPagePart(selector,content);
+
+       });
+    };
+
+//on ajax refresh updated enteries
+function reloadPagePart(selector, content) {
+     var filepath = content + ".php";
+
+       $(selector).fadeOut('slow').load(filepath).fadeIn("slow");
+
+   };
+
+
+//get expand keywords from hidden object on page
 var shortcuts = $("#keywords").data('keywords');
 
-$('.delete_button_comment').click(function() {
-var id = $(this).data('id');
-alert(id);
-$.ajax({
- type: "POST",
- url: "delete_comments.php",
- data: { comment_id: id}
-}).done(function( msg ) {
- alert( "Comment Deleted " );
-});
-
-   });
 
 jQuery(function ($) {
 
