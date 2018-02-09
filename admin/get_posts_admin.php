@@ -35,14 +35,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
               // output data of each row
               ?>
               <table id="article_status">
+                <thead>
                 <tr>
                   <th>Article Title</th>
-                  <th>Date</th>
+                  <th class="date-th">Date</th>
 
                   <th>Delete/Restor</th>
 
                   <th colspan="2">Comments</th>
-
+                </thead>
                 </tr>
                <?php
               while($row = $result->fetch_assoc()) {

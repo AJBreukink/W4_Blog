@@ -10,43 +10,43 @@ $deleted = $row["post_deleted"];
 
 
 echo  "<tr class='$post_deleted'>
-          <th>$post_title </th>
-          <th>$post_date</th>
+          <td>$post_title </td>
+          <th class='date-th'>$post_date</td>
           ";
           //if post not deleted
           if ($deleted == 0) {
-              echo "<th><button class='delete_button_posts toggle' data-id='$post_id'> delete </button></th>
-                    <th>$comments</th>";
+              echo "<td><button class='delete_button_posts toggle' data-id='$post_id'> delete </button></td>
+                    <td>$comments</td>";
 
                       //if comments on
                       if ($comments_value == 0) {
-                          echo "<th><button class='off_button_posts toggle' data-id='$post_id'> Off </button></th>
-                          <th><button class='pause_button_posts toggle' data-id='$post_id'> Pause </button></th>";
+                          echo "<td><button class='off_button_posts toggle' data-id='$post_id'> Off </button></td>
+                          <td><button class='pause_button_posts toggle' data-id='$post_id'> Pause </button></td>";
                       }
                       //if comments turned off
                       elseif ($comments_value == 1) {
-                          echo "<th><button class='on_button_posts toggle' data-id='$post_id'> On </button></th>
-                                  <th><button class='pause_button_posts toggle' data-id='$post_id'> Pause </button></th>";
+                          echo "<td><button class='on_button_posts toggle' data-id='$post_id'> On </button></td>
+                                  <td><button class='pause_button_posts toggle' data-id='$post_id'> Pause </button></td>";
                       }
                       //if comments paused
                       elseif ($comments_value == 2) {
-                          echo "<th><button class='on_button_posts toggle' data-id='$post_id'> On </button></th>
-                                  <th><button class='off_button_posts toggle' data-id='$post_id'> Off </button></th>";
+                          echo "<td><button class='on_button_posts toggle' data-id='$post_id'> On </button></td>
+                                  <td><button class='off_button_posts toggle' data-id='$post_id'> Off </button></td>";
                       }
 
                       //if no data show all 3 buttons
                        else {
-                          echo "<th><button class='on_button_posts toggle' data-id='$post_id'> On </button></th>
-                                  <th><button class='off_button_posts toggle' data-id='$post_id'> Off </button></th>
-                                  <th><button class='pause_button_posts toggle' data-id='$post_id'> Pause </button></th>";
+                          echo "<td><button class='on_button_posts toggle' data-id='$post_id'> On </button></td>
+                                  <td><button class='off_button_posts toggle' data-id='$post_id'> Off </button></td>
+                                  <td><button class='pause_button_posts toggle' data-id='$post_id'> Pause </button></td>";
                       }
           }
           //if post deleted
           elseif ($deleted == 1) {
-              echo "<th><button class='restor_button_posts toggle' data-id='$post_id'> restore </button></th>";
+              echo "<td><button class='restor_button_posts toggle' data-id='$post_id'> restore </button></td>";
           }
           else {
-            echo "<th> could not get status </th>";
+            echo "<td> could not get status </td>";
           }
 
 

@@ -20,21 +20,22 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                   // output data of each row & make a table
                   ?>
                   <table id="shortcuts_table">
+                    <thead>
                      <tr>
                        <th>Shortcuts</th>
                        <th>Description</th>
                      </tr>
-
+                   </thead>
                   <?php
                       while($row = $result->fetch_assoc()) {
                         ?>
                         <tr>
-                          <th>
+                          <td>
                           <?php echo $row["shortcut_name"] ?>
-                          </th>
-                           <th>
+                        </td>
+                           <td>
                           <?php echo $row["shortcut_value"]; ?>
-                          </th>
+                        </td>
                         </tr>
 
                           <?php

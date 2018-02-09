@@ -25,6 +25,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
               // output data of each row
               ?>
               <table id="comments_status">
+                <thead>
                 <tr>
                   <th>Article Title</th>
                   <th>Username</th>
@@ -33,6 +34,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
                   <th>Delete</th>
                 </tr>
+              </thead>
                <?php
               while($row = $result->fetch_assoc()) {
               // get output tempalate

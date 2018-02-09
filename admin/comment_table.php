@@ -9,17 +9,17 @@ $post_title = $row["post_title"];
 
 
 echo  "<tr class='$comment_status'>
-          <th>$post_title </th>
-          <th>$comment_user</th>
-          <th>$comment_text</th>
-          <th>$comment_date</th>";
+          <td>$post_title </td>
+          <td>$comment_user</td>
+          <td>$comment_text</td>
+          <td class='date-th'>$comment_date</td>";
 
           if ($comment_deleted == 0) {
-            echo  "<th><button class='delete_button_comment toggle' data-id='$comment_id'> delete </button></th>
+            echo  "<td><button class='delete_button_comment toggle' data-id='$comment_id'> delete </button></td>
                   </tr>";
           }
           elseif ($comment_deleted == 1) {
-            echo  "<th><button class='restore_button_comment toggle' data-id='$comment_id'> restore </button></th>
+            echo  "<td><button class='restore_button_comment toggle' data-id='$comment_id'> restore </button></td>
                   </tr>";
           }
 

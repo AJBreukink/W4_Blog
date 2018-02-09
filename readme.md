@@ -2,7 +2,8 @@
 
 ## Synopsis
 
-This is a blog that works with a database and can be used to post & read articles and sort them by categories.   
+This is a fully responsive blog that works with a database and can be used to post & read articles and sort them by categories. 
+
 ## Demo
 
  [ The Live Demo](http://maijagrudule.com/mimi/blog)  where you can see the user and admin part of the blog .

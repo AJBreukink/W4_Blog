@@ -20,20 +20,22 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                   // output data of each row
                   ?>
                    <table>
+                     <thead>
                      <tr>
                        <th>Category</th>
                        <th>Description</th>
                    </tr>
+                 </thead>
                    <?php
                     while($row = $result->fetch_assoc()) {
                       ?>
                       <tr>
-                        <th>
+                        <td>
                         <?php echo $row["category_title"] ?>
-                       </th>
-                       <th>
+                      </td>
+                       <td>
                         <?php echo $row["category_description"]; ?>
-                        </th>
+                      </td>
                       </tr>
 
 
