@@ -17,7 +17,7 @@ This blog uses 5 tables:
 * **Comments**   - used to store comments and link to posts
 * **Shortcuts** - used to store user defined shortcuts and expansions for typing assistance
 
-![The structure](Documentation/structure.svg?raw=true "the structure")
+![The structure](Documentation/structure.png?raw=true "the structure")
 
 
 # Functionality
