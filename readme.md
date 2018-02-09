@@ -16,13 +16,8 @@ This blog uses 5 tables:
 * **Posts_Categories** - used to link articles to multiple categories
 * **Comments**   - used to store comments and link to posts
 * **Shortcuts** - used to store user defined shortcuts and expansions for typing assistance
+![The structure](https://mermaidjs.github.io/mermaid-live-editor/#/view/CnNlcXVlbmNlRGlhZ3JhbQpQb3N0cyAtPiBQb3N0X0NhdGVnb3JpZXM6cG9zdF9pZApQb3N0X0NhdGVnb3JpZXMtPiBDYXRlZ29yaWVzOiBjYXRlZ29yeV9pZApDb21tZW50cyAtPiBQb3N0czogcG9zdF9pZAoKCg?theme=dark)
 
-```mermaid
-sequenceDiagram
-Posts -> Post_Categories:post_id
-Post_Categories-> Categories: category_id
-Comments -> Posts: post_id
-```
 
 # Functionality
 
