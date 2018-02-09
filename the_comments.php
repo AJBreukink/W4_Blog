@@ -7,16 +7,18 @@ $comment_user = $row["comment_user"];
 
 
 echo "
-  <div id=\"comment-$comment_id\" class=\" comment_box\">
-
-      <div class=\"username\"> $comment_user
-
+  <div id=\"comment-$comment_id\" class=\" comment_box \">
+      <div class=\"header-comments\">
+          <span class=\"username\"> $comment_user
+          </span>
+          <span class=\"date-comments\"> $comment_date
+          </span>
       </div>
       <div class=\"comment_text\" >
       $comment_text
       </div>
 
-       <span class=\"date-footer\"> $comment_date </span>
+
   </div>
 ";
 

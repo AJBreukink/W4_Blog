@@ -19,14 +19,14 @@ $(".dropdown").click(function(){
 jQuery(function ($) {
 
   //if user navigates with #hash to post toggle display and scroll to comments
-
+      
       var path =  window.location.hash;
       //check if #hash value present
           if (path) {
 
           $(path).toggleClass("grid-item-fullwidth");
 
-          var position2 = $(path).children(".content:first").children("div:first-child").offset();
+          var position2 = $(path).children(".content:first").next("button").offset();
 
             $(path).animate({
                   scrollTop: position2.top - 200

@@ -23,22 +23,23 @@ echo "
       $content_min_extract";
 
       if ($comment_status == 0) {
+          echo "<h5 class=\"center\">Write a comment</h5>";
         include($comments_form);
         include($comments_list);
       }
       //if comments turned off
       elseif ($comment_status == 1) {
-          echo "<h5>comments are dissabled for this article</h5>";
+          echo "<h5 class=\"center\">comments are dissabled for this article</h5>";
       }
       //if comments paused
       elseif ($comment_status == 2) {
-        echo "<h5> New comments are dissabled for this article</h5>";
+        echo "<h5 class=\"center\"> New comments are dissabled for this article</h5>";
         include($comments_list);
       }
 
       //if no data show all 3 buttons
        else {
-          echo "something went wrong, try reloading the page to see comments";
+          echo " Oops, something went wrong. Try reloading the page to see comments";
       }
 
 echo  "
