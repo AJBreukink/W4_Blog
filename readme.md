@@ -17,14 +17,10 @@ This blog uses 5 tables:
 * **Comments**   - used to store comments and link to posts
 * **Shortcuts** - used to store user defined shortcuts and expansions for typing assistance
 
-```mermaid
 sequenceDiagram
 Posts -> Post_Categories:post_id
 Post_Categories-> Categories: category_id
 Comments -> Posts: post_id
-
-
-```
 
 # Functionality
 
